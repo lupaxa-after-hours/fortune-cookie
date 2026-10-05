@@ -26,8 +26,6 @@ from lupaxa.fortune.models import (
 SCHEMA_VERSION = 1
 ID_PATTERN = re.compile(r"[a-z][a-z0-9]*-[0-9]{3,}\Z")
 
-_CACHE: Catalogue | None = None
-
 
 @dataclass(frozen=True, slots=True)
 class FortuneRecord:
@@ -64,19 +62,32 @@ class Catalogue:
         return self.oracle
 
 
+@dataclass
+class _CatalogueCache:
+    """Mutable holder for one validated catalogue.
+
+    The catalogue is stored on this object. Rebinding a module global made
+    CodeQL treat that assignment as an unused variable, even though the next
+    call reads it.
+    """
+
+    catalogue: Catalogue | None = None
+
+
+_CACHE = _CatalogueCache()
+
+
 def clear_catalogue_cache() -> None:
     """Drop a successful catalogue cache. Failed loads are never stored."""
-    global _CACHE
-    _CACHE = None
+    _CACHE.catalogue = None
 
 
 def load_catalogue() -> Catalogue:
     """Load, validate, and cache the bundled datasets."""
-    global _CACHE
-    if _CACHE is not None:
-        return _CACHE
+    if _CACHE.catalogue is not None:
+        return _CACHE.catalogue
     catalogue = _load_bundled()
-    _CACHE = catalogue
+    _CACHE.catalogue = catalogue
     return catalogue
 
 
