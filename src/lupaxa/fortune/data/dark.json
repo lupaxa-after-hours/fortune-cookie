@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "fortunes": [
+    {
+      "id": "dark-001",
+      "text": "Your legacy system has outlived another attempt to replace it."
+    },
+    {
+      "id": "dark-002",
+      "text": "The ticket will be closed as cannot reproduce, including by you."
+    },
+    {
+      "id": "dark-003",
+      "text": "A service named temporary has started paying rent."
+    },
+    {
+      "id": "dark-004",
+      "text": "The backlog is not a list. It is a sediment."
+    },
+    {
+      "id": "dark-005",
+      "text": "Someone will suggest a rewrite, and the rewrite will suggest a meeting."
+    },
+    {
+      "id": "dark-006",
+      "text": "The happy path is a rumour maintained by the demo script."
+    },
+    {
+      "id": "dark-007",
+      "text": "Your local environment works, which is the least transferable miracle."
+    },
+    {
+      "id": "dark-008",
+      "text": "The migration plan has a phase called later, and later is undated."
+    },
+    {
+      "id": "dark-009",
+      "text": "Production is the integration environment that replies."
+    },
+    {
+      "id": "dark-010",
+      "text": "The wiki page is confident and three deploys behind."
+    },
+    {
+      "id": "dark-011",
+      "text": "A cron job is the only system that still believes in you."
+    },
+    {
+      "id": "dark-012",
+      "text": "The incident channel will reuse last month's jokes with new timestamps."
+    },
+    {
+      "id": "dark-013",
+      "text": "You will find the bug in the one file the review marked trivial."
+    },
+    {
+      "id": "dark-014",
+      "text": "The architecture diagram has a box labelled misc, and misc is winning."
+    },
+    {
+      "id": "dark-015",
+      "text": "Alerts have become a genre."
+    },
+    {
+      "id": "dark-016",
+      "text": "The queue is not backed up. It is contemplative."
+    },
+    {
+      "id": "dark-017",
+      "text": "Your fix will ship beside the bug in a future the release notes call minor."
+    },
+    {
+      "id": "dark-018",
+      "text": "The staging data is fictional, and so is the confidence it produces."
+    },
+    {
+      "id": "dark-019",
+      "text": "A feature flag named killswitch has never killed anything, including itself."
+    },
+    {
+      "id": "dark-020",
+      "text": "The on-call handoff is two sentences and a shrug."
+    },
+    {
+      "id": "dark-021",
+      "text": "The dependency tree has developed folklore."
+    },
+    {
+      "id": "dark-022",
+      "text": "You will automate the workaround and forget it was a workaround."
+    },
+    {
+      "id": "dark-023",
+      "text": "The green dashboard is a portrait, not a measurement."
+    },
+    {
+      "id": "dark-024",
+      "text": "Legacy code is just code that met a deadline and stayed for the pension."
+    },
+    {
+      "id": "dark-025",
+      "text": "The rollback is documented in a thread that now says this message was deleted."
+    },
+    {
+      "id": "dark-026",
+      "text": "Every service is critical if you ask it personally."
+    },
+    {
+      "id": "dark-027",
+      "text": "The test suite is a museum of fears, some of them still alive."
+    },
+    {
+      "id": "dark-028",
+      "text": "A config typo will be load-bearing by Thursday."
+    },
+    {
+      "id": "dark-029",
+      "text": "The system is distributed in the sense that blame is."
+    },
+    {
+      "id": "dark-030",
+      "text": "You will open a file, sigh, and close it in that order."
+    },
+    {
+      "id": "dark-031",
+      "text": "The rewrite's first milestone is understanding the thing it replaces."
+    },
+    {
+      "id": "dark-032",
+      "text": "Uptime is a story the status page tells with a straight face."
+    },
+    {
+      "id": "dark-033",
+      "text": "The bug and the ticket disagree about who started it."
+    },
+    {
+      "id": "dark-034",
+      "text": "Your pager has a favourite hour, and it is not a polite one."
+    },
+    {
+      "id": "dark-035",
+      "text": "The cleanup branch will be rebased until it becomes folklore too."
+    },
+    {
+      "id": "dark-036",
+      "text": "Nothing is deprecated until the last caller has left the company."
+    },
+    {
+      "id": "dark-037",
+      "text": "The runbook ends with the words see Dave, and Dave has a new job."
+    },
+    {
+      "id": "dark-038",
+      "text": "The cluster is highly available to incidents."
+    },
+    {
+      "id": "dark-039",
+      "text": "A small script will outlive the platform it was meant to unblock."
+    },
+    {
+      "id": "dark-040",
+      "text": "The postmortem will be blameless, and the graph will not be."
+    }
+  ]
+}

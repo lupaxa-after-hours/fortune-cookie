@@ -1,0 +1,1130 @@
+{
+  "schema_version": 1,
+  "fortunes": [
+    {
+      "id": "wisdom-001",
+      "category": "wisdom",
+      "text": "The code you are afraid to touch will soon require modification."
+    },
+    {
+      "id": "wisdom-002",
+      "category": "wisdom",
+      "text": "A clear name saves more time than a clever one."
+    },
+    {
+      "id": "wisdom-003",
+      "category": "wisdom",
+      "text": "The comment explaining why will outlive the comment explaining what."
+    },
+    {
+      "id": "wisdom-004",
+      "category": "wisdom",
+      "text": "Deleting code is a form of design."
+    },
+    {
+      "id": "wisdom-005",
+      "category": "wisdom",
+      "text": "The simplest fix is the one you can still explain next month."
+    },
+    {
+      "id": "wisdom-006",
+      "category": "wisdom",
+      "text": "Tests describe the behaviour you are willing to defend."
+    },
+    {
+      "id": "wisdom-007",
+      "category": "wisdom",
+      "text": "A small function with one job is a kindness to the next reader."
+    },
+    {
+      "id": "wisdom-008",
+      "category": "wisdom",
+      "text": "The bug you cannot reproduce is still a bug."
+    },
+    {
+      "id": "wisdom-009",
+      "category": "wisdom",
+      "text": "Shipping is a decision, not a mood."
+    },
+    {
+      "id": "wisdom-010",
+      "category": "wisdom",
+      "text": "Write down the interface you wish you had before the next change."
+    },
+    {
+      "id": "wisdom-011",
+      "category": "wisdom",
+      "text": "Good logging is a letter to your future self."
+    },
+    {
+      "id": "wisdom-012",
+      "category": "wisdom",
+      "text": "A dependency is a colleague you did not hire."
+    },
+    {
+      "id": "wisdom-013",
+      "category": "wisdom",
+      "text": "The review that feels slow is often the one that prevents an outage."
+    },
+    {
+      "id": "wisdom-014",
+      "category": "wisdom",
+      "text": "Consistency beats a new pattern invented at midnight."
+    },
+    {
+      "id": "wisdom-015",
+      "category": "wisdom",
+      "text": "If two modules must change together, they are already one idea."
+    },
+    {
+      "id": "wisdom-016",
+      "category": "wisdom",
+      "text": "The error message is part of the product."
+    },
+    {
+      "id": "wisdom-017",
+      "category": "wisdom",
+      "text": "A note that says fix this later, with nobody named, is only a wish."
+    },
+    {
+      "id": "wisdom-018",
+      "category": "wisdom",
+      "text": "Measure the slow part before you rewrite the calm part."
+    },
+    {
+      "id": "wisdom-019",
+      "category": "wisdom",
+      "text": "The branch that lives too long starts telling a different story."
+    },
+    {
+      "id": "wisdom-020",
+      "category": "wisdom",
+      "text": "Documentation that matches the code is a feature."
+    },
+    {
+      "id": "wisdom-021",
+      "category": "wisdom",
+      "text": "The first version should be easy to delete."
+    },
+    {
+      "id": "wisdom-022",
+      "category": "wisdom",
+      "text": "A failing test is a question the code must answer."
+    },
+    {
+      "id": "wisdom-023",
+      "category": "wisdom",
+      "text": "Names that tell the truth reduce the need for meetings."
+    },
+    {
+      "id": "wisdom-024",
+      "category": "wisdom",
+      "text": "The edge case you skip will introduce itself in production."
+    },
+    {
+      "id": "wisdom-025",
+      "category": "wisdom",
+      "text": "Leave the code a little clearer than you found it."
+    },
+    {
+      "id": "warning-001",
+      "category": "warning",
+      "text": "A green build can still be describing the wrong behaviour."
+    },
+    {
+      "id": "warning-002",
+      "category": "warning",
+      "text": "The silent retry will hide the failure until it is too large."
+    },
+    {
+      "id": "warning-003",
+      "category": "warning",
+      "text": "A shared mutable value is waiting for two callers to meet."
+    },
+    {
+      "id": "warning-004",
+      "category": "warning",
+      "text": "The migration you postponed has started keeping score."
+    },
+    {
+      "id": "warning-005",
+      "category": "warning",
+      "text": "An unbounded queue is a polite way to run out of memory."
+    },
+    {
+      "id": "warning-006",
+      "category": "warning",
+      "text": "The feature flag you meant to remove has become a second product."
+    },
+    {
+      "id": "warning-007",
+      "category": "warning",
+      "text": "Credentials in a chat log do not stay in the chat."
+    },
+    {
+      "id": "warning-008",
+      "category": "warning",
+      "text": "A catch that ignores the error will not ignore the consequence."
+    },
+    {
+      "id": "warning-009",
+      "category": "warning",
+      "text": "The clock on one server has already drifted from the others."
+    },
+    {
+      "id": "warning-010",
+      "category": "warning",
+      "text": "Copying the config by hand will copy the mistake as well."
+    },
+    {
+      "id": "warning-011",
+      "category": "warning",
+      "text": "The cache you trust has not heard about the latest write."
+    },
+    {
+      "id": "warning-012",
+      "category": "warning",
+      "text": "A partial deploy leaves two versions explaining themselves at once."
+    },
+    {
+      "id": "warning-013",
+      "category": "warning",
+      "text": "The test that always passes has stopped being a test."
+    },
+    {
+      "id": "warning-014",
+      "category": "warning",
+      "text": "Disk space ends during the backup you were counting on."
+    },
+    {
+      "id": "warning-015",
+      "category": "warning",
+      "text": "A timeout that is too long looks healthy until the pile tips over."
+    },
+    {
+      "id": "warning-016",
+      "category": "warning",
+      "text": "A force push rewrites the story the reviewer already read."
+    },
+    {
+      "id": "warning-017",
+      "category": "warning",
+      "text": "The default password is still the default on the box you forgot."
+    },
+    {
+      "id": "warning-018",
+      "category": "warning",
+      "text": "Skipping the index will be fine until the table grows up."
+    },
+    {
+      "id": "warning-019",
+      "category": "warning",
+      "text": "The alert with no owner will ring for nobody."
+    },
+    {
+      "id": "warning-020",
+      "category": "warning",
+      "text": "Two services writing the same row will eventually disagree in public."
+    },
+    {
+      "id": "warning-021",
+      "category": "warning",
+      "text": "The script that worked once has no memory of why."
+    },
+    {
+      "id": "warning-022",
+      "category": "warning",
+      "text": "An expired certificate prefers a Friday."
+    },
+    {
+      "id": "warning-023",
+      "category": "warning",
+      "text": "The log line you removed was the only witness."
+    },
+    {
+      "id": "warning-024",
+      "category": "warning",
+      "text": "A wide open security group is not a temporary convenience."
+    },
+    {
+      "id": "warning-025",
+      "category": "warning",
+      "text": "The rollback you have not rehearsed is only a rumour."
+    },
+    {
+      "id": "prediction-001",
+      "category": "prediction",
+      "text": "A function named temporary will celebrate an anniversary."
+    },
+    {
+      "id": "prediction-002",
+      "category": "prediction",
+      "text": "The ticket you deferred will return with friends."
+    },
+    {
+      "id": "prediction-003",
+      "category": "prediction",
+      "text": "Someone will ask for the one-off report every week."
+    },
+    {
+      "id": "prediction-004",
+      "category": "prediction",
+      "text": "The prototype will be demonstrated to a customer."
+    },
+    {
+      "id": "prediction-005",
+      "category": "prediction",
+      "text": "A dependency bump will rearrange a screen you did not mean to touch."
+    },
+    {
+      "id": "prediction-006",
+      "category": "prediction",
+      "text": "The small refactor will reveal a second, older refactor."
+    },
+    {
+      "id": "prediction-007",
+      "category": "prediction",
+      "text": "You will find the answer in a commit message from last year."
+    },
+    {
+      "id": "prediction-008",
+      "category": "prediction",
+      "text": "A flaky test will pass the moment you start to describe it."
+    },
+    {
+      "id": "prediction-009",
+      "category": "prediction",
+      "text": "The config value nobody remembers will become load-bearing."
+    },
+    {
+      "id": "prediction-010",
+      "category": "prediction",
+      "text": "You will automate the task the third time you do it by hand."
+    },
+    {
+      "id": "prediction-011",
+      "category": "prediction",
+      "text": "A reviewer will ask the question you hoped the diff already answered."
+    },
+    {
+      "id": "prediction-012",
+      "category": "prediction",
+      "text": "The migration will need one more column than the plan allowed."
+    },
+    {
+      "id": "prediction-013",
+      "category": "prediction",
+      "text": "You will meet this bug again under a different stack trace."
+    },
+    {
+      "id": "prediction-014",
+      "category": "prediction",
+      "text": "The dashboard will be screenshotted into a slide."
+    },
+    {
+      "id": "prediction-015",
+      "category": "prediction",
+      "text": "A shortcut in the build will become the official path."
+    },
+    {
+      "id": "prediction-016",
+      "category": "prediction",
+      "text": "The estimate will be quoted back to you without the conditions."
+    },
+    {
+      "id": "prediction-017",
+      "category": "prediction",
+      "text": "You will rediscover a helper that already does the thing."
+    },
+    {
+      "id": "prediction-018",
+      "category": "prediction",
+      "text": "The incident write-up will be the best documentation this service gets."
+    },
+    {
+      "id": "prediction-019",
+      "category": "prediction",
+      "text": "A quiet service will become noisy the week you are away."
+    },
+    {
+      "id": "prediction-020",
+      "category": "prediction",
+      "text": "The sample data will escape into a real environment."
+    },
+    {
+      "id": "prediction-021",
+      "category": "prediction",
+      "text": "You will rename the variable and finally understand the function."
+    },
+    {
+      "id": "prediction-022",
+      "category": "prediction",
+      "text": "The backlog item marked minor will unblock three other teams."
+    },
+    {
+      "id": "prediction-023",
+      "category": "prediction",
+      "text": "A comment that says do not remove will be removed."
+    },
+    {
+      "id": "prediction-024",
+      "category": "prediction",
+      "text": "The next outage will rhyme with one you have already seen."
+    },
+    {
+      "id": "prediction-025",
+      "category": "prediction",
+      "text": "You will be grateful for the test you almost skipped."
+    },
+    {
+      "id": "ominous-001",
+      "category": "ominous",
+      "text": "The repository has started referring to itself in the third person."
+    },
+    {
+      "id": "ominous-002",
+      "category": "ominous",
+      "text": "A file named final-final has appeared in the root."
+    },
+    {
+      "id": "ominous-003",
+      "category": "ominous",
+      "text": "The build log contains a sentence that was not printed by the build."
+    },
+    {
+      "id": "ominous-004",
+      "category": "ominous",
+      "text": "Somewhere a cron job is still proud of an old year."
+    },
+    {
+      "id": "ominous-005",
+      "category": "ominous",
+      "text": "The staging database knows your name."
+    },
+    {
+      "id": "ominous-006",
+      "category": "ominous",
+      "text": "An empty directory is watching the deploy."
+    },
+    {
+      "id": "ominous-007",
+      "category": "ominous",
+      "text": "The linter has opinions about code that is not open."
+    },
+    {
+      "id": "ominous-008",
+      "category": "ominous",
+      "text": "A breakpoint you removed has been seen in the production logs."
+    },
+    {
+      "id": "ominous-009",
+      "category": "ominous",
+      "text": "The README and the code have stopped speaking."
+    },
+    {
+      "id": "ominous-010",
+      "category": "ominous",
+      "text": "One container is healthy in a way the others find concerning."
+    },
+    {
+      "id": "ominous-011",
+      "category": "ominous",
+      "text": "The ticket has no author and a very specific due date."
+    },
+    {
+      "id": "ominous-012",
+      "category": "ominous",
+      "text": "A stack trace ends in a function nobody admits to writing."
+    },
+    {
+      "id": "ominous-013",
+      "category": "ominous",
+      "text": "The monitor is green because it stopped asking."
+    },
+    {
+      "id": "ominous-014",
+      "category": "ominous",
+      "text": "Your editor scrolled to a line you have never visited."
+    },
+    {
+      "id": "ominous-015",
+      "category": "ominous",
+      "text": "The backup completed in a suspiciously cheerful amount of time."
+    },
+    {
+      "id": "ominous-016",
+      "category": "ominous",
+      "text": "A config key is set to yes, but yes is not the word you think."
+    },
+    {
+      "id": "ominous-017",
+      "category": "ominous",
+      "text": "The branch list is longer than the team."
+    },
+    {
+      "id": "ominous-018",
+      "category": "ominous",
+      "text": "Something in the temp directory has a lock file and a plan."
+    },
+    {
+      "id": "ominous-019",
+      "category": "ominous",
+      "text": "The graph flattened because the metric gave up."
+    },
+    {
+      "id": "ominous-020",
+      "category": "ominous",
+      "text": "A comment says it works if you do not look directly at it."
+    },
+    {
+      "id": "ominous-021",
+      "category": "ominous",
+      "text": "The service restarted itself and did not leave a note."
+    },
+    {
+      "id": "ominous-022",
+      "category": "ominous",
+      "text": "Two clocks in the cluster have chosen different afternoons."
+    },
+    {
+      "id": "ominous-023",
+      "category": "ominous",
+      "text": "The test fixture contains a date that has not happened yet."
+    },
+    {
+      "id": "ominous-024",
+      "category": "ominous",
+      "text": "An old reminder was checked off by a commit that only changed whitespace."
+    },
+    {
+      "id": "ominous-025",
+      "category": "ominous",
+      "text": "The on-call phone already knows you are reading this."
+    },
+    {
+      "id": "encouragement-001",
+      "category": "encouragement",
+      "text": "You are allowed to make the change smaller and still be brave."
+    },
+    {
+      "id": "encouragement-002",
+      "category": "encouragement",
+      "text": "Asking for the context is part of doing the work well."
+    },
+    {
+      "id": "encouragement-003",
+      "category": "encouragement",
+      "text": "The fact that you noticed the smell means you can improve it."
+    },
+    {
+      "id": "encouragement-004",
+      "category": "encouragement",
+      "text": "A careful rollback is a kind of success."
+    },
+    {
+      "id": "encouragement-005",
+      "category": "encouragement",
+      "text": "You do not have to understand everything to leave one path clearer."
+    },
+    {
+      "id": "encouragement-006",
+      "category": "encouragement",
+      "text": "Rest is a legitimate step in debugging."
+    },
+    {
+      "id": "encouragement-007",
+      "category": "encouragement",
+      "text": "The reviewer who asks questions is helping you ship."
+    },
+    {
+      "id": "encouragement-008",
+      "category": "encouragement",
+      "text": "You can delete the experiment. The learning stays."
+    },
+    {
+      "id": "encouragement-009",
+      "category": "encouragement",
+      "text": "Progress that is honest is faster than progress that is performed."
+    },
+    {
+      "id": "encouragement-010",
+      "category": "encouragement",
+      "text": "You have fixed harder things than this ticket suggests."
+    },
+    {
+      "id": "encouragement-011",
+      "category": "encouragement",
+      "text": "Writing the failing test first is a vote of confidence in yourself."
+    },
+    {
+      "id": "encouragement-012",
+      "category": "encouragement",
+      "text": "It is fine to say you need the afternoon to do this properly."
+    },
+    {
+      "id": "encouragement-013",
+      "category": "encouragement",
+      "text": "The messy draft is how the clean version begins."
+    },
+    {
+      "id": "encouragement-014",
+      "category": "encouragement",
+      "text": "You are not behind. You are in the middle, which is where work happens."
+    },
+    {
+      "id": "encouragement-015",
+      "category": "encouragement",
+      "text": "Pairing is not a confession. It is a shortcut to a better idea."
+    },
+    {
+      "id": "encouragement-016",
+      "category": "encouragement",
+      "text": "Your questions make the design safer for the next person."
+    },
+    {
+      "id": "encouragement-017",
+      "category": "encouragement",
+      "text": "Shipping a slice today is a gift to tomorrow."
+    },
+    {
+      "id": "encouragement-018",
+      "category": "encouragement",
+      "text": "You can be proud of the bug you prevented, even if nobody sees it."
+    },
+    {
+      "id": "encouragement-019",
+      "category": "encouragement",
+      "text": "The code does not need you to be brilliant. It needs you to be clear."
+    },
+    {
+      "id": "encouragement-020",
+      "category": "encouragement",
+      "text": "Take the walk. The stack trace will still be there, and kinder."
+    },
+    {
+      "id": "encouragement-021",
+      "category": "encouragement",
+      "text": "You are building something people will rely on. That is worth care."
+    },
+    {
+      "id": "encouragement-022",
+      "category": "encouragement",
+      "text": "A well-named function is a small act of hospitality."
+    },
+    {
+      "id": "encouragement-023",
+      "category": "encouragement",
+      "text": "You can ask for help before you are stuck. That is experience."
+    },
+    {
+      "id": "encouragement-024",
+      "category": "encouragement",
+      "text": "The careful commit you make today will help a noisy afternoon."
+    },
+    {
+      "id": "encouragement-025",
+      "category": "encouragement",
+      "text": "You belong in this codebase. Leave a sign that you were kind to it."
+    },
+    {
+      "id": "devops-001",
+      "category": "devops",
+      "text": "DNS has decided to become a philosophy."
+    },
+    {
+      "id": "devops-002",
+      "category": "devops",
+      "text": "The certificate expires on a day when everyone is in a workshop."
+    },
+    {
+      "id": "devops-003",
+      "category": "devops",
+      "text": "The container is fine. The network policy has not met it yet."
+    },
+    {
+      "id": "devops-004",
+      "category": "devops",
+      "text": "Helm rendered a value that nobody put in the values file on purpose."
+    },
+    {
+      "id": "devops-005",
+      "category": "devops",
+      "text": "The pipeline is red on a step whose owner is a distribution list."
+    },
+    {
+      "id": "devops-006",
+      "category": "devops",
+      "text": "Kubernetes moved the pod to a node with different opinions."
+    },
+    {
+      "id": "devops-007",
+      "category": "devops",
+      "text": "The health check passes if you do not ask it to do any work."
+    },
+    {
+      "id": "devops-008",
+      "category": "devops",
+      "text": "Terraform wants to replace the thing you only meant to rename."
+    },
+    {
+      "id": "devops-009",
+      "category": "devops",
+      "text": "The secret was rotated, and the old pod is the last to hear."
+    },
+    {
+      "id": "devops-010",
+      "category": "devops",
+      "text": "A volume mounted the directory you were using for notes."
+    },
+    {
+      "id": "devops-011",
+      "category": "devops",
+      "text": "The canary is happy and the stable track is still negotiating."
+    },
+    {
+      "id": "devops-012",
+      "category": "devops",
+      "text": "CI spent eight minutes installing a compiler for a five-line check."
+    },
+    {
+      "id": "devops-013",
+      "category": "devops",
+      "text": "The load balancer is sending traffic into yesterday's task definition."
+    },
+    {
+      "id": "devops-014",
+      "category": "devops",
+      "text": "Your manifest is valid YAML and slightly invalid intentions."
+    },
+    {
+      "id": "devops-015",
+      "category": "devops",
+      "text": "The rollback plan is a link to a document from the previous rollback."
+    },
+    {
+      "id": "devops-016",
+      "category": "devops",
+      "text": "Prometheus is graphing a metric that means three different things."
+    },
+    {
+      "id": "devops-017",
+      "category": "devops",
+      "text": "The ingress and the service have never been formally introduced."
+    },
+    {
+      "id": "devops-018",
+      "category": "devops",
+      "text": "A cron job in the cluster still believes in an old fileserver."
+    },
+    {
+      "id": "devops-019",
+      "category": "devops",
+      "text": "The image tag latest has been latest since the previous incident."
+    },
+    {
+      "id": "devops-020",
+      "category": "devops",
+      "text": "Disk pressure evicted the one pod that was doing something useful."
+    },
+    {
+      "id": "devops-021",
+      "category": "devops",
+      "text": "The deploy froze because a webhook returned an unexpected body."
+    },
+    {
+      "id": "devops-022",
+      "category": "devops",
+      "text": "Two regions are healthy and disagree about which release is current."
+    },
+    {
+      "id": "devops-023",
+      "category": "devops",
+      "text": "The readiness probe is ready. The application is still starting."
+    },
+    {
+      "id": "devops-024",
+      "category": "devops",
+      "text": "You exported the dashboard, and it exported your assumptions too."
+    },
+    {
+      "id": "devops-025",
+      "category": "devops",
+      "text": "The pipeline passed because a historical edit skipped the test stage."
+    },
+    {
+      "id": "code-001",
+      "category": "code",
+      "text": "The function is long, and only a few lines are the actual point."
+    },
+    {
+      "id": "code-002",
+      "category": "code",
+      "text": "A null checked three times is a design asking for a type."
+    },
+    {
+      "id": "code-003",
+      "category": "code",
+      "text": "The test name says what, and the assertion says something else."
+    },
+    {
+      "id": "code-004",
+      "category": "code",
+      "text": "You fixed the bug in the copy of the function, not the function."
+    },
+    {
+      "id": "code-005",
+      "category": "code",
+      "text": "The dependency update brought a new default and an old surprise."
+    },
+    {
+      "id": "code-006",
+      "category": "code",
+      "text": "This loop is searching a collection that already knows the answer."
+    },
+    {
+      "id": "code-007",
+      "category": "code",
+      "text": "The boolean argument has become a small undocumented mode switch."
+    },
+    {
+      "id": "code-008",
+      "category": "code",
+      "text": "The parser accepts the input and apologises in the next function."
+    },
+    {
+      "id": "code-009",
+      "category": "code",
+      "text": "A magic number in the middle of the method is a hidden requirement."
+    },
+    {
+      "id": "code-010",
+      "category": "code",
+      "text": "The mock returns the shape the test wants, not the one production sends."
+    },
+    {
+      "id": "code-011",
+      "category": "code",
+      "text": "You can extract a function here without inventing a framework."
+    },
+    {
+      "id": "code-012",
+      "category": "code",
+      "text": "The exception handler is broader than the mistake it meant to catch."
+    },
+    {
+      "id": "code-013",
+      "category": "code",
+      "text": "Two tests pass by sharing a global that production does not have."
+    },
+    {
+      "id": "code-014",
+      "category": "code",
+      "text": "The regex is correct and also a request for a real parser."
+    },
+    {
+      "id": "code-015",
+      "category": "code",
+      "text": "The comment says obvious. The next reader would like a noun."
+    },
+    {
+      "id": "code-016",
+      "category": "code",
+      "text": "This class has a constructor, a secret second one, and a hope."
+    },
+    {
+      "id": "code-017",
+      "category": "code",
+      "text": "The off-by-one is hiding in the range that looked friendly."
+    },
+    {
+      "id": "code-018",
+      "category": "code",
+      "text": "Formatting the code revealed that two branches do the same thing."
+    },
+    {
+      "id": "code-019",
+      "category": "code",
+      "text": "The helper you inlined last month wants to be a helper again."
+    },
+    {
+      "id": "code-020",
+      "category": "code",
+      "text": "A stringly typed status will collect new spellings."
+    },
+    {
+      "id": "code-021",
+      "category": "code",
+      "text": "The fixture builds a world so large the assertion cannot see the bug."
+    },
+    {
+      "id": "code-022",
+      "category": "code",
+      "text": "You do not need a new abstraction. You need the old one to be honest."
+    },
+    {
+      "id": "code-023",
+      "category": "code",
+      "text": "The log line will include a secret if the error takes the long path."
+    },
+    {
+      "id": "code-024",
+      "category": "code",
+      "text": "Renaming this variable makes the conditional boring, which is the goal."
+    },
+    {
+      "id": "code-025",
+      "category": "code",
+      "text": "The code is clever in a way the on-call rotation will not enjoy."
+    },
+    {
+      "id": "career-001",
+      "category": "career",
+      "text": "The meeting invite has an agenda, which is already a good sign."
+    },
+    {
+      "id": "career-002",
+      "category": "career",
+      "text": "Your next piece of feedback will be about a decision you can explain."
+    },
+    {
+      "id": "career-003",
+      "category": "career",
+      "text": "A promotion packet is a story with links, not a list of sufferings."
+    },
+    {
+      "id": "career-004",
+      "category": "career",
+      "text": "The interview question is really asking how you handle uncertainty."
+    },
+    {
+      "id": "career-005",
+      "category": "career",
+      "text": "Someone will praise the diff that made the system calmer."
+    },
+    {
+      "id": "career-006",
+      "category": "career",
+      "text": "You will be asked to estimate a thing that is still a metaphor."
+    },
+    {
+      "id": "career-007",
+      "category": "career",
+      "text": "The mentor you need is nearby and also busy. Ask anyway."
+    },
+    {
+      "id": "career-008",
+      "category": "career",
+      "text": "A title does not debug a race condition."
+    },
+    {
+      "id": "career-009",
+      "category": "career",
+      "text": "The presentation will go better if the demo can fail without you."
+    },
+    {
+      "id": "career-010",
+      "category": "career",
+      "text": "Your one-to-one is a good place to say what you want to learn next."
+    },
+    {
+      "id": "career-011",
+      "category": "career",
+      "text": "The work that looks invisible is often the work that kept Friday quiet."
+    },
+    {
+      "id": "career-012",
+      "category": "career",
+      "text": "You can decline a meeting that has no decision hiding in it."
+    },
+    {
+      "id": "career-013",
+      "category": "career",
+      "text": "The recruiter message is not a performance review."
+    },
+    {
+      "id": "career-014",
+      "category": "career",
+      "text": "A clear no saves more time than a vague yes."
+    },
+    {
+      "id": "career-015",
+      "category": "career",
+      "text": "A more senior title, if it comes, will still involve stack traces."
+    },
+    {
+      "id": "career-016",
+      "category": "career",
+      "text": "Write down the win before the week convinces you it was normal."
+    },
+    {
+      "id": "career-017",
+      "category": "career",
+      "text": "The best collaborators leave the ticket easier than they found it."
+    },
+    {
+      "id": "career-018",
+      "category": "career",
+      "text": "You are allowed to want work that is interesting and also finished."
+    },
+    {
+      "id": "career-019",
+      "category": "career",
+      "text": "A design doc is a kindness to the people who were not in the room."
+    },
+    {
+      "id": "career-020",
+      "category": "career",
+      "text": "The talk you fear is just a README with an audience."
+    },
+    {
+      "id": "career-021",
+      "category": "career",
+      "text": "Your manager cannot help with a problem they have not heard."
+    },
+    {
+      "id": "career-022",
+      "category": "career",
+      "text": "Switching teams will not switch off your taste."
+    },
+    {
+      "id": "career-023",
+      "category": "career",
+      "text": "The calendar is full. The priority is still yours to name."
+    },
+    {
+      "id": "career-024",
+      "category": "career",
+      "text": "A good code review is a professional act, not a personality."
+    },
+    {
+      "id": "career-025",
+      "category": "career",
+      "text": "You will be proud of the engineer you are on an ordinary Tuesday."
+    },
+    {
+      "id": "friday-001",
+      "category": "friday",
+      "text": "The deployment can wait. Your weekend cannot."
+    },
+    {
+      "id": "friday-002",
+      "category": "friday",
+      "text": "Friday afternoon is a poor time to meet a new migration."
+    },
+    {
+      "id": "friday-003",
+      "category": "friday",
+      "text": "If the rollback is a theory, Monday is the experiment."
+    },
+    {
+      "id": "friday-004",
+      "category": "friday",
+      "text": "Ship the documentation. Leave the surprise for a weekday."
+    },
+    {
+      "id": "friday-005",
+      "category": "friday",
+      "text": "The green button looks friendlier after lunch than it will at dusk."
+    },
+    {
+      "id": "friday-006",
+      "category": "friday",
+      "text": "A small fix can stay small until Monday."
+    },
+    {
+      "id": "friday-007",
+      "category": "friday",
+      "text": "The reviewer who already left is not a blocker. They are a sign."
+    },
+    {
+      "id": "friday-008",
+      "category": "friday",
+      "text": "Production has weekend plans that do not include your refactor."
+    },
+    {
+      "id": "friday-009",
+      "category": "friday",
+      "text": "Write down where you stopped. The next session starts in daylight."
+    },
+    {
+      "id": "friday-010",
+      "category": "friday",
+      "text": "The flaky test will not become stable out of respect for Friday."
+    },
+    {
+      "id": "friday-011",
+      "category": "friday",
+      "text": "Merge the typo. Schedule the architecture."
+    },
+    {
+      "id": "friday-012",
+      "category": "friday",
+      "text": "If you would not start it on Monday morning, do not start it now."
+    },
+    {
+      "id": "friday-013",
+      "category": "friday",
+      "text": "The deploy window and the train home are having a conversation."
+    },
+    {
+      "id": "friday-014",
+      "category": "friday",
+      "text": "A feature flag that defaults to off is a very Friday decision."
+    },
+    {
+      "id": "friday-015",
+      "category": "friday",
+      "text": "Leave a note in the ticket. Heroics do not page well."
+    },
+    {
+      "id": "friday-016",
+      "category": "friday",
+      "text": "The build is green enough to walk away from."
+    },
+    {
+      "id": "friday-017",
+      "category": "friday",
+      "text": "Nobody will thank you for a puzzle that arrives with the weekend."
+    },
+    {
+      "id": "friday-018",
+      "category": "friday",
+      "text": "Close the laptop on a known state."
+    },
+    {
+      "id": "friday-019",
+      "category": "friday",
+      "text": "The urgent request can survive a sentence that says Monday."
+    },
+    {
+      "id": "friday-020",
+      "category": "friday",
+      "text": "Your future on-call self is asking for a dull Friday."
+    },
+    {
+      "id": "friday-021",
+      "category": "friday",
+      "text": "A branch named after Friday is the start of a ghost story."
+    },
+    {
+      "id": "friday-022",
+      "category": "friday",
+      "text": "Tests that pass locally can keep passing without a deploy."
+    },
+    {
+      "id": "friday-023",
+      "category": "friday",
+      "text": "The rollback script you have not read is not yet a plan."
+    },
+    {
+      "id": "friday-024",
+      "category": "friday",
+      "text": "Choose the version of this change that fits before people log off."
+    },
+    {
+      "id": "friday-025",
+      "category": "friday",
+      "text": "Go home while the graphs are boring. Boring is the prize."
+    }
+  ]
+}

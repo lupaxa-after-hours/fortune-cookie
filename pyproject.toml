@@ -1,0 +1,140 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lupaxa-fortune-cookie"
+dynamic = ["version"]
+description = "Developer-themed fortune cookie library and command-line tool."
+readme = "README.md"
+license = { file = "LICENCE" }
+requires-python = ">=3.10"
+
+authors = [
+  { name = "The Lupaxa Project" }
+]
+
+keywords = ["fortune", "fortune-cookie", "cli", "humor"]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Games/Entertainment",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/lupaxa-after-hours/fortune-cookie"
+Documentation = "https://github.com/lupaxa-after-hours/fortune-cookie"
+Repository = "https://github.com/lupaxa-after-hours/fortune-cookie"
+Issues = "https://github.com/lupaxa-after-hours/fortune-cookie/issues"
+
+[project.scripts]
+fortune-cookie = "lupaxa.fortune.cli:main"
+lupaxa-fortune-cookie = "lupaxa.fortune.cli:main"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.6.0",
+  "mypy>=1.12.0",
+  "hatch>=1.12.0",
+  "bump-my-version>=1.2.0",
+  "pip-audit>=2.7.0",
+]
+test = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+]
+
+[tool.hatch.version]
+path = "src/lupaxa/fortune/version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/**",
+  "README.md",
+  "LICENCE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lupaxa"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "B",
+  "S",
+  "UP",
+  "SIM",
+  "C4",
+  "ISC",
+  "D",
+  "ANN",
+  "PT",
+]
+
+ignore = [
+  "D200",
+  "D201",
+  "D202",
+  "D203",
+  "D204",
+  "D205",
+  "D206",
+  "D207",
+  "D208",
+  "D209",
+  "D210",
+  "D211",
+  "D212",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+  "S101",
+  "S105",
+  "S311",
+  "S603",
+  "ANN001",
+  "ANN201",
+]
+"src/lupaxa/fortune/generator.py" = ["S311"]
+"src/lupaxa/fortune/cli.py" = ["S311"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src", "tests"]
+mypy_path = "src"
+explicit_package_bases = true
+namespace_packages = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-ra -q --disable-warnings"
+testpaths = ["tests"]
+pythonpath = ["src"]

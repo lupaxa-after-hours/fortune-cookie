@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "fortunes": [
+    {
+      "id": "oracle-001",
+      "text": "The day will be ordinary, and ordinary is a gift.",
+      "risk_level": "low",
+      "recommended_action": "Commit your work and enjoy the quiet."
+    },
+    {
+      "id": "oracle-002",
+      "text": "A small test will fail, then pass, then teach you something.",
+      "risk_level": "low",
+      "recommended_action": "Read the assertion before you rerun it."
+    },
+    {
+      "id": "oracle-003",
+      "text": "Your next commit will be dull in the best way.",
+      "risk_level": "low",
+      "recommended_action": "Write a message your colleague can trust."
+    },
+    {
+      "id": "oracle-004",
+      "text": "The build will stay green if you keep the change narrow.",
+      "risk_level": "low",
+      "recommended_action": "Leave the ambitious rewrite for a named ticket."
+    },
+    {
+      "id": "oracle-005",
+      "text": "A reviewer will say this looks fine, and they will be right.",
+      "risk_level": "low",
+      "recommended_action": "Merge it and go outside for a minute."
+    },
+    {
+      "id": "oracle-006",
+      "text": "The logs will be quiet enough to hear yourself think.",
+      "risk_level": "low",
+      "recommended_action": "Use the calm to write down one real risk."
+    },
+    {
+      "id": "oracle-007",
+      "text": "No incident will need you for the next few hours.",
+      "risk_level": "low",
+      "recommended_action": "Take the break you already earned."
+    },
+    {
+      "id": "oracle-008",
+      "text": "A rename will make a function kinder.",
+      "risk_level": "low",
+      "recommended_action": "Ship the rename and nothing else."
+    },
+    {
+      "id": "oracle-009",
+      "text": "The ticket is smaller than your worry about it.",
+      "risk_level": "low",
+      "recommended_action": "Do the first honest step and stop there."
+    },
+    {
+      "id": "oracle-010",
+      "text": "Documentation you write now will save a Tuesday.",
+      "risk_level": "low",
+      "recommended_action": "Add the paragraph while the context is fresh."
+    },
+    {
+      "id": "oracle-011",
+      "text": "A warning in the build is trying to become a bug.",
+      "risk_level": "moderate",
+      "recommended_action": "Read the failing test before rerunning it."
+    },
+    {
+      "id": "oracle-012",
+      "text": "Two config files have started to disagree.",
+      "risk_level": "moderate",
+      "recommended_action": "Diff them before you deploy either."
+    },
+    {
+      "id": "oracle-013",
+      "text": "The flaky check will pass if you look at the timing.",
+      "risk_level": "moderate",
+      "recommended_action": "Note the flake instead of clicking again."
+    },
+    {
+      "id": "oracle-014",
+      "text": "A dependency wants a bump you did not schedule.",
+      "risk_level": "moderate",
+      "recommended_action": "Read the changelog before you accept it."
+    },
+    {
+      "id": "oracle-015",
+      "text": "The migration is one column more interesting than planned.",
+      "risk_level": "moderate",
+      "recommended_action": "Update the rollback note before you continue."
+    },
+    {
+      "id": "oracle-016",
+      "text": "A monitor is yellow for a reason the dashboard hides.",
+      "risk_level": "moderate",
+      "recommended_action": "Open the raw log before you silence the alert."
+    },
+    {
+      "id": "oracle-017",
+      "text": "The branch is old enough to have opinions.",
+      "risk_level": "moderate",
+      "recommended_action": "Rebase it or close it before it spreads."
+    },
+    {
+      "id": "oracle-018",
+      "text": "An environment variable is set in one place and hoped in another.",
+      "risk_level": "moderate",
+      "recommended_action": "Write down where the real value lives."
+    },
+    {
+      "id": "oracle-019",
+      "text": "The queue is growing at a polite but steady rate.",
+      "risk_level": "moderate",
+      "recommended_action": "Check the consumer before you add a producer."
+    },
+    {
+      "id": "oracle-020",
+      "text": "A permission change will surprise a job that runs at night.",
+      "risk_level": "moderate",
+      "recommended_action": "List the callers before you tighten the rule."
+    },
+    {
+      "id": "oracle-021",
+      "text": "The pipeline is green, but the omens remain ambiguous.",
+      "risk_level": "high",
+      "recommended_action": "Inspect the rollback plan before celebrating."
+    },
+    {
+      "id": "oracle-022",
+      "text": "A deploy you consider small has a wide blast radius.",
+      "risk_level": "high",
+      "recommended_action": "Review the rollback plan."
+    },
+    {
+      "id": "oracle-023",
+      "text": "The canary is quiet because it is not receiving traffic.",
+      "risk_level": "high",
+      "recommended_action": "Confirm the route before you promote."
+    },
+    {
+      "id": "oracle-024",
+      "text": "An expired secret is closer than the calendar admits.",
+      "risk_level": "high",
+      "recommended_action": "Rotate it while the old one still works."
+    },
+    {
+      "id": "oracle-025",
+      "text": "The database migration wants a lock you have not timed.",
+      "risk_level": "high",
+      "recommended_action": "Rehearse the lock on a copy first."
+    },
+    {
+      "id": "oracle-026",
+      "text": "Two regions will disagree if you ship only one.",
+      "risk_level": "high",
+      "recommended_action": "Finish the pair or ship neither."
+    },
+    {
+      "id": "oracle-027",
+      "text": "The feature flag default is not the default you think.",
+      "risk_level": "high",
+      "recommended_action": "Read the production value before the demo."
+    },
+    {
+      "id": "oracle-028",
+      "text": "A retry storm is one bad error away.",
+      "risk_level": "high",
+      "recommended_action": "Cap the retries before you raise the timeout."
+    },
+    {
+      "id": "oracle-029",
+      "text": "The backup you trust has not been restored this year.",
+      "risk_level": "high",
+      "recommended_action": "Restore a scrap of it before you need all of it."
+    },
+    {
+      "id": "oracle-030",
+      "text": "The on-call gap is exactly as wide as this change.",
+      "risk_level": "high",
+      "recommended_action": "Wait for a human who can roll it back."
+    },
+    {
+      "id": "oracle-031",
+      "text": "The Friday deploy button has started making eye contact.",
+      "risk_level": "critical",
+      "recommended_action": "Step away from the Friday deployment button."
+    },
+    {
+      "id": "oracle-032",
+      "text": "A force push is being considered as a personality trait.",
+      "risk_level": "critical",
+      "recommended_action": "Close the laptop and talk to a person."
+    },
+    {
+      "id": "oracle-033",
+      "text": "The production console is open, and curiosity is in the room.",
+      "risk_level": "critical",
+      "recommended_action": "Log out before curiosity types anything."
+    },
+    {
+      "id": "oracle-034",
+      "text": "All the alarms are muted, which is not the same as peace.",
+      "risk_level": "critical",
+      "recommended_action": "Unmute one true alarm before you leave."
+    },
+    {
+      "id": "oracle-035",
+      "text": "The migration script has no limit and a great deal of confidence.",
+      "risk_level": "critical",
+      "recommended_action": "Add a limit and run it somewhere harmless."
+    },
+    {
+      "id": "oracle-036",
+      "text": "Someone is about to debug production with a write query.",
+      "risk_level": "critical",
+      "recommended_action": "Use a read-only session and a second pair of eyes."
+    },
+    {
+      "id": "oracle-037",
+      "text": "The cluster is one full disk away from a folk tale.",
+      "risk_level": "critical",
+      "recommended_action": "Free space before you ship anything else."
+    },
+    {
+      "id": "oracle-038",
+      "text": "A config paste from chat is heading toward the real environment.",
+      "risk_level": "critical",
+      "recommended_action": "Stop and type it from the source of truth."
+    },
+    {
+      "id": "oracle-039",
+      "text": "The rollback button is decorative.",
+      "risk_level": "critical",
+      "recommended_action": "Do not deploy until the way back is real."
+    },
+    {
+      "id": "oracle-040",
+      "text": "The change is brave, late, and unreviewed.",
+      "risk_level": "critical",
+      "recommended_action": "Save the branch and go home."
+    }
+  ]
+}
