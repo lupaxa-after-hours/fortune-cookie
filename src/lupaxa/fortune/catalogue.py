@@ -112,9 +112,7 @@ def parse_json(text: str, *, resource: str) -> object:
         raise DatasetError(f"{resource}: invalid UTF-8") from exc
 
 
-def parse_ordinary(
-    payload: object, *, resource: str = "fortunes.json"
-) -> tuple[FortuneRecord, ...]:
+def parse_ordinary(payload: object, *, resource: str = "fortunes.json") -> tuple[FortuneRecord, ...]:
     """Validate the ordinary fortune file."""
     fortunes = _fortune_list(payload, resource=resource, allowed=("schema_version", "fortunes"))
     records: list[FortuneRecord] = []
@@ -132,18 +130,13 @@ def parse_ordinary(
 def parse_simple(payload: object, *, resource: str, mode: Mode) -> tuple[FortuneRecord, ...]:
     """Validate a dark or corporate fortune file."""
     fortunes = _fortune_list(payload, resource=resource, allowed=("schema_version", "fortunes"))
-    return tuple(
-        _simple_record(item, resource=resource, index=index, mode=mode)
-        for index, item in enumerate(fortunes)
-    )
+    return tuple(_simple_record(item, resource=resource, index=index, mode=mode) for index, item in enumerate(fortunes))
 
 
 def parse_oracle(payload: object, *, resource: str = "oracle.json") -> tuple[FortuneRecord, ...]:
     """Validate the oracle file."""
     fortunes = _fortune_list(payload, resource=resource, allowed=("schema_version", "fortunes"))
-    return tuple(
-        _oracle_record(item, resource=resource, index=index) for index, item in enumerate(fortunes)
-    )
+    return tuple(_oracle_record(item, resource=resource, index=index) for index, item in enumerate(fortunes))
 
 
 def parse_numbers(payload: object, *, resource: str = "lucky_numbers.json") -> tuple[int, ...]:
@@ -260,9 +253,7 @@ def _ordinary_record(item: object, *, resource: str, index: int) -> FortuneRecor
         _field_error(resource, index, record_id, "category", "is not an ordinary category")
     if not record_id.startswith(f"{category}-"):
         _field_error(resource, index, record_id, "id", "must begin with the category name")
-    text = _entry_text(
-        body["text"], resource=resource, index=index, record_id=record_id, field="text"
-    )
+    text = _entry_text(body["text"], resource=resource, index=index, record_id=record_id, field="text")
     return FortuneRecord(
         id=record_id,
         text=text,
@@ -273,13 +264,9 @@ def _ordinary_record(item: object, *, resource: str, index: int) -> FortuneRecor
 
 def _simple_record(item: object, *, resource: str, index: int, mode: Mode) -> FortuneRecord:
     body = _record_object(item, resource=resource, index=index)
-    _exact_keys(
-        body, required=("id", "text"), allowed=("id", "text"), resource=resource, index=index
-    )
+    _exact_keys(body, required=("id", "text"), allowed=("id", "text"), resource=resource, index=index)
     record_id = _identifier(body["id"], resource=resource, index=index, prefix=mode)
-    text = _entry_text(
-        body["text"], resource=resource, index=index, record_id=record_id, field="text"
-    )
+    text = _entry_text(body["text"], resource=resource, index=index, record_id=record_id, field="text")
     return FortuneRecord(id=record_id, text=text, mode=mode, category=None)
 
 
@@ -293,9 +280,7 @@ def _oracle_record(item: object, *, resource: str, index: int) -> FortuneRecord:
         index=index,
     )
     record_id = _identifier(body["id"], resource=resource, index=index, prefix="oracle")
-    text = _entry_text(
-        body["text"], resource=resource, index=index, record_id=record_id, field="text"
-    )
+    text = _entry_text(body["text"], resource=resource, index=index, record_id=record_id, field="text")
     risk = body["risk_level"]
     if not isinstance(risk, str) or risk not in RISK_LEVELS:
         _field_error(resource, index, record_id, "risk_level", "is not a known risk level")
@@ -328,14 +313,7 @@ def _record_object(item: object, *, resource: str, index: int) -> dict[str, obje
     return item
 
 
-def _exact_keys(
-    body: dict[str, object],
-    *,
-    required: tuple[str, ...],
-    allowed: tuple[str, ...],
-    resource: str,
-    index: int | None = None,
-) -> None:
+def _exact_keys(body: dict[str, object], *, required: tuple[str, ...], allowed: tuple[str, ...], resource: str, index: int | None = None) -> None:
     where = resource if index is None else f"{resource}: record {index}"
     missing = [key for key in required if key not in body]
     unknown = [key for key in body if key not in allowed]
@@ -361,9 +339,7 @@ def _identifier(value: object, *, resource: str, index: int, prefix: str | None)
     if ID_PATTERN.fullmatch(text) is None:
         raise DatasetError(f"{resource}: record {index}: field 'id' has the wrong shape")
     if prefix is not None and not text.startswith(f"{prefix}-"):
-        raise DatasetError(
-            f"{resource}: record {index} ({text}): field 'id' must begin with {prefix!r}"
-        )
+        raise DatasetError(f"{resource}: record {index} ({text}): field 'id' must begin with {prefix!r}")
     return text
 
 
@@ -371,9 +347,7 @@ def _entry_text(value: object, *, resource: str, index: int, record_id: str, fie
     try:
         return display_text(value, field=field)
     except ValueError as exc:
-        raise DatasetError(
-            f"{resource}: record {index} ({record_id}): field {field!r} is invalid"
-        ) from exc
+        raise DatasetError(f"{resource}: record {index} ({record_id}): field {field!r} is invalid") from exc
 
 
 def _field_error(resource: str, index: int, record_id: str, field: str, message: str) -> NoReturn:

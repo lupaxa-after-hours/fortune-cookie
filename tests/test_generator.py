@@ -141,9 +141,7 @@ def test_many_allows_duplicates_in_order() -> None:
         oracle=catalogue.oracle,
         numbers=catalogue.numbers,
     )
-    results = FortuneGenerator(rng=random.Random(1), catalogue=only_dark).generate_many(
-        3, mode="dark"
-    )
+    results = FortuneGenerator(rng=random.Random(1), catalogue=only_dark).generate_many(3, mode="dark")
     assert [item.id for item in results] == ["dark-001", "dark-001", "dark-001"]
 
 

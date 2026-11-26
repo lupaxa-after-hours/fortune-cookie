@@ -31,13 +31,7 @@ def _oracle() -> Fortune:
 
 def test_decorative_standard() -> None:
     """Standard output matches the documented block."""
-    assert render_fortune(_standard()) == (
-        "🥠 Your fortune:\n"
-        "\n"
-        "The code you are afraid to touch will soon require modification.\n"
-        "\n"
-        "Lucky numbers: 22, 80, 443, 8080"
-    )
+    assert render_fortune(_standard()) == ("🥠 Your fortune:\n\nThe code you are afraid to touch will soon require modification.\n\nLucky numbers: 22, 80, 443, 8080")
 
 
 def test_decorative_modes() -> None:
@@ -70,10 +64,7 @@ def test_decorative_oracle() -> None:
 def test_plain_oracle() -> None:
     """Plain oracle output keeps the facts and drops the decoration."""
     assert render_fortune(_oracle(), plain=True) == (
-        "The pipeline is green, but the omens remain ambiguous.\n"
-        "Risk level: high\n"
-        "Recommended action: Inspect the rollback plan before celebrating.\n"
-        "Lucky numbers: 42, 404, 443, 8080"
+        "The pipeline is green, but the omens remain ambiguous.\nRisk level: high\nRecommended action: Inspect the rollback plan before celebrating.\nLucky numbers: 42, 404, 443, 8080"
     )
 
 

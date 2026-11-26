@@ -25,12 +25,7 @@ class FortuneGenerator:
     They are not a stable cross-release contract.
     """
 
-    def __init__(
-        self,
-        *,
-        rng: random.Random | None = None,
-        catalogue: Catalogue | None = None,
-    ) -> None:
+    def __init__(self, *, rng: random.Random | None = None, catalogue: Catalogue | None = None) -> None:
         """Store an RNG and an optional in-memory catalogue.
 
         ``catalogue`` is for tests. It does not read a caller-supplied path.
@@ -38,14 +33,7 @@ class FortuneGenerator:
         self._rng = random.Random() if rng is None else rng
         self._catalogue_override = catalogue
 
-    def generate(
-        self,
-        *,
-        category: Category | None = None,
-        mode: Mode = "standard",
-        include_numbers: bool = True,
-        number_count: int = 4,
-    ) -> Fortune:
+    def generate(self, *, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4) -> Fortune:
         """Return one fortune."""
         self._validate(
             category=category,
@@ -61,19 +49,9 @@ class FortuneGenerator:
             include_numbers=include_numbers,
             number_count=number_count,
         )
-        return self._draw(
-            catalogue, pool, include_numbers=include_numbers, number_count=number_count
-        )
+        return self._draw(catalogue, pool, include_numbers=include_numbers, number_count=number_count)
 
-    def generate_many(
-        self,
-        count: int = 1,
-        *,
-        category: Category | None = None,
-        mode: Mode = "standard",
-        include_numbers: bool = True,
-        number_count: int = 4,
-    ) -> tuple[Fortune, ...]:
+    def generate_many(self, count: int = 1, *, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4) -> tuple[Fortune, ...]:
         """Return ``count`` fortunes from one validation and one RNG stream."""
         if isinstance(count, bool) or not isinstance(count, int) or count < 1:
             raise InvalidOptionError("count must be a positive integer")
@@ -91,10 +69,7 @@ class FortuneGenerator:
             include_numbers=include_numbers,
             number_count=number_count,
         )
-        return tuple(
-            self._draw(catalogue, pool, include_numbers=include_numbers, number_count=number_count)
-            for _ in range(count)
-        )
+        return tuple(self._draw(catalogue, pool, include_numbers=include_numbers, number_count=number_count) for _ in range(count))
 
     def _catalogue(self) -> Catalogue:
         if self._catalogue_override is not None:
@@ -103,14 +78,7 @@ class FortuneGenerator:
 
         return load_catalogue()
 
-    def _validate(
-        self,
-        *,
-        category: Category | None,
-        mode: Mode,
-        include_numbers: bool,
-        number_count: int,
-    ) -> None:
+    def _validate(self, *, category: Category | None, mode: Mode, include_numbers: bool, number_count: int) -> None:
         if not isinstance(mode, str) or mode not in MODES:
             raise InvalidOptionError(f"unknown mode: {mode!r}")
         if category is not None:
@@ -125,15 +93,7 @@ class FortuneGenerator:
         if isinstance(number_count, bool) or not isinstance(number_count, int) or number_count < 1:
             raise InvalidOptionError("number_count must be a positive integer")
 
-    def _prepare_pool(
-        self,
-        catalogue: Catalogue,
-        *,
-        category: Category | None,
-        mode: Mode,
-        include_numbers: bool,
-        number_count: int,
-    ) -> tuple[FortuneRecord, ...]:
+    def _prepare_pool(self, catalogue: Catalogue, *, category: Category | None, mode: Mode, include_numbers: bool, number_count: int) -> tuple[FortuneRecord, ...]:
         pool = catalogue.pool(mode, category)
         if not pool:
             raise EmptyFortunePoolError(f"no fortunes are available for mode {mode!r}")
@@ -141,14 +101,7 @@ class FortuneGenerator:
             raise InvalidOptionError("number_count exceeds the lucky-number pool")
         return pool
 
-    def _draw(
-        self,
-        catalogue: Catalogue,
-        pool: tuple[FortuneRecord, ...],
-        *,
-        include_numbers: bool,
-        number_count: int,
-    ) -> Fortune:
+    def _draw(self, catalogue: Catalogue, pool: tuple[FortuneRecord, ...], *, include_numbers: bool, number_count: int) -> Fortune:
         record = self._rng.choice(pool)
         numbers: tuple[int, ...] = ()
         if include_numbers:
@@ -165,14 +118,7 @@ class FortuneGenerator:
         )
 
 
-def generate_fortune(
-    *,
-    category: Category | None = None,
-    mode: Mode = "standard",
-    include_numbers: bool = True,
-    number_count: int = 4,
-    rng: random.Random | None = None,
-) -> Fortune:
+def generate_fortune(*, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4, rng: random.Random | None = None) -> Fortune:
     """Return one fortune, reusing ``rng`` when the caller supplied one."""
     return FortuneGenerator(rng=rng).generate(
         category=category,

@@ -28,7 +28,7 @@ commands.
 pip install lupaxa-fortune-cookie
 ```
 
-Requires Python 3.10+. The standard library is enough.
+Requires Python 3.11 to 3.15. The standard library is enough.
 
 ## CLI
 

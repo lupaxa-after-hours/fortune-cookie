@@ -73,10 +73,7 @@ def test_import_does_not_load_catalogue() -> None:
         [
             sys.executable,
             "-c",
-            (
-                "import sys; import lupaxa.fortune; "
-                "raise SystemExit('lupaxa.fortune.catalogue' in sys.modules)"
-            ),
+            ("import sys; import lupaxa.fortune; raise SystemExit('lupaxa.fortune.catalogue' in sys.modules)"),
         ],
         cwd=Path(__file__).resolve().parents[1],
         env=env,
@@ -216,14 +213,10 @@ def test_duplicate_id_and_text_across_files() -> None:
     ordinary = parse_ordinary(_ordinary_payload())
     dark = (FortuneRecord(id="wisdom-001", text="Different dark text.", mode="dark"),)
     with pytest.raises(DatasetError, match="duplicate id"):
-        assemble_catalogue(
-            ordinary=ordinary, dark=dark, corporate=(), oracle=(), numbers=(1, 2, 3, 4)
-        )
+        assemble_catalogue(ordinary=ordinary, dark=dark, corporate=(), oracle=(), numbers=(1, 2, 3, 4))
     dark = (FortuneRecord(id="dark-001", text="Fortune about wisdom only.", mode="dark"),)
     with pytest.raises(DatasetError, match="duplicate fortune text"):
-        assemble_catalogue(
-            ordinary=ordinary, dark=dark, corporate=(), oracle=(), numbers=(1, 2, 3, 4)
-        )
+        assemble_catalogue(ordinary=ordinary, dark=dark, corporate=(), oracle=(), numbers=(1, 2, 3, 4))
 
 
 def test_more_dataset_rejections() -> None:

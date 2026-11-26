@@ -43,9 +43,7 @@ def list_categories() -> tuple[Category, ...]:
 def display_text(value: object, *, field: str) -> str:
     """Return text that is safe to print on one line."""
     if not isinstance(value, str) or value == "" or value != value.strip() or _has_control(value):
-        raise ValueError(
-            f"{field} must be a non-empty single-line string without surrounding whitespace"
-        )
+        raise ValueError(f"{field} must be a non-empty single-line string without surrounding whitespace")
     return value
 
 

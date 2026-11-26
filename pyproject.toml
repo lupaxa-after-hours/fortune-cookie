@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "Developer-themed fortune cookie library and command-line tool."
 readme = "README.md"
 license = { file = "LICENCE" }
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 authors = [
   { name = "The Lupaxa Project" }
@@ -23,11 +23,11 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Topic :: Games/Entertainment",
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Topic :: Utilities",
@@ -72,8 +72,8 @@ include = [
 packages = ["src/lupaxa"]
 
 [tool.ruff]
-line-length = 100
-target-version = "py310"
+line-length = 200
+target-version = "py311"
 
 [tool.ruff.lint]
 select = [
@@ -126,7 +126,7 @@ convention = "numpy"
 quote-style = "double"
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 files = ["src", "tests"]
 mypy_path = "src"
 explicit_package_bases = true

@@ -121,9 +121,7 @@ def test_version_text(capsys: pytest.CaptureFixture[str]) -> None:
     assert capsys.readouterr().out.strip() == f"lupaxa-fortune {__version__}"
 
 
-def test_dataset_error_has_no_traceback(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_dataset_error_has_no_traceback(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
     """A broken catalogue exits 1 with a prefixed message and no traceback."""
 
     def boom(self: FortuneGenerator) -> object:
@@ -157,9 +155,7 @@ def test_keyboard_interrupt(monkeypatch: pytest.MonkeyPatch) -> None:
     assert main(["--seed", "1"]) == 130
 
 
-def test_stdout_oserror(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_stdout_oserror(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
     """An ordinary write failure exits 1."""
 
     def fail(*_args: object, **_kwargs: object) -> int:
@@ -194,9 +190,7 @@ def test_broken_pipe_returns_zero(monkeypatch: pytest.MonkeyPatch) -> None:
         os.close(write_fd)
 
 
-def test_option_error_exits_2(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_option_error_exits_2(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]) -> None:
     """A library option error is a prefixed stderr message and exit 2."""
 
     def boom(self: FortuneGenerator, **_kwargs: object) -> object:
