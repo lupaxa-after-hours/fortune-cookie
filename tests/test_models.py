@@ -24,17 +24,7 @@ def _fortune(**overrides: object) -> Fortune:
 
 def test_list_categories_is_canonical() -> None:
     """Categories stay in the documented order."""
-    assert list_categories() == (
-        "wisdom",
-        "warning",
-        "prediction",
-        "ominous",
-        "encouragement",
-        "devops",
-        "code",
-        "career",
-        "friday",
-    )
+    assert list_categories() == ("wisdom", "warning", "prediction", "ominous", "encouragement", "devops", "code", "career", "friday")
 
 
 def test_frozen_assignment_fails() -> None:

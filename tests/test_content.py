@@ -5,35 +5,7 @@ from __future__ import annotations
 from lupaxa.fortune.catalogue import load_catalogue
 from lupaxa.fortune.models import CATEGORIES, RISK_LEVELS
 
-EXPECTED_NUMBERS = (
-    0,
-    1,
-    2,
-    8,
-    16,
-    22,
-    32,
-    42,
-    64,
-    80,
-    128,
-    256,
-    404,
-    418,
-    443,
-    500,
-    512,
-    1024,
-    1337,
-    2048,
-    4096,
-    5432,
-    6379,
-    8000,
-    8080,
-    8443,
-    9000,
-)
+EXPECTED_NUMBERS = (0, 1, 2, 8, 16, 22, 32, 42, 64, 80, 128, 256, 404, 418, 443, 500, 512, 1024, 1337, 2048, 4096, 5432, 6379, 8000, 8080, 8443, 9000)
 
 
 def test_production_content_targets() -> None:

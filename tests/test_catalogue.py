@@ -10,17 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from lupaxa.fortune.catalogue import (
-    FortuneRecord,
-    assemble_catalogue,
-    clear_catalogue_cache,
-    load_catalogue,
-    parse_json,
-    parse_numbers,
-    parse_oracle,
-    parse_ordinary,
-    parse_simple,
-)
+from lupaxa.fortune.catalogue import FortuneRecord, assemble_catalogue, clear_catalogue_cache, load_catalogue, parse_json, parse_numbers, parse_oracle, parse_ordinary, parse_simple
 from lupaxa.fortune.exceptions import DatasetError
 from lupaxa.fortune.models import CATEGORIES
 
@@ -197,13 +187,7 @@ def test_lucky_number_rules() -> None:
     """The number pool rejects bools, duplicates, negatives, and short lists."""
     base = {"schema_version": 1, "numbers": [1, 2, 3, 4]}
     assert parse_numbers(base) == (1, 2, 3, 4)
-    for numbers, match in (
-        ([1, 2, 3], "at least four"),
-        ([1, 2, 3, True], "integer"),
-        ([1, 2, 3, -1], "non-negative"),
-        ([1, 2, 3, 3], "duplicate"),
-        ([1, 2, 3, 1.5], "integer"),
-    ):
+    for numbers, match in (([1, 2, 3], "at least four"), ([1, 2, 3, True], "integer"), ([1, 2, 3, -1], "non-negative"), ([1, 2, 3, 3], "duplicate"), ([1, 2, 3, 1.5], "integer")):
         with pytest.raises(DatasetError, match=match):
             parse_numbers({"schema_version": 1, "numbers": numbers})
 

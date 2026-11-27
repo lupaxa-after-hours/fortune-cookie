@@ -14,14 +14,7 @@ from importlib.resources import files
 from typing import NoReturn, cast
 
 from lupaxa.fortune.exceptions import DatasetError
-from lupaxa.fortune.models import (
-    CATEGORIES,
-    RISK_LEVELS,
-    Category,
-    Mode,
-    RiskLevel,
-    display_text,
-)
+from lupaxa.fortune.models import CATEGORIES, RISK_LEVELS, Category, Mode, RiskLevel, display_text
 
 SCHEMA_VERSION = 1
 ID_PATTERN = re.compile(r"[a-z][a-z0-9]*-[0-9]{3,}\Z")
@@ -142,12 +135,7 @@ def parse_oracle(payload: object, *, resource: str = "oracle.json") -> tuple[For
 def parse_numbers(payload: object, *, resource: str = "lucky_numbers.json") -> tuple[int, ...]:
     """Validate the lucky-number pool."""
     body = _object(payload, resource=resource)
-    _exact_keys(
-        body,
-        required=("schema_version", "numbers"),
-        allowed=("schema_version", "numbers"),
-        resource=resource,
-    )
+    _exact_keys(body, required=("schema_version", "numbers"), allowed=("schema_version", "numbers"), resource=resource)
     _schema_version(body, resource=resource)
     raw_numbers = body["numbers"]
     if not isinstance(raw_numbers, list):
@@ -169,12 +157,7 @@ def parse_numbers(payload: object, *, resource: str = "lucky_numbers.json") -> t
 
 
 def assemble_catalogue(
-    *,
-    ordinary: tuple[FortuneRecord, ...],
-    dark: tuple[FortuneRecord, ...],
-    corporate: tuple[FortuneRecord, ...],
-    oracle: tuple[FortuneRecord, ...],
-    numbers: tuple[int, ...],
+    *, ordinary: tuple[FortuneRecord, ...], dark: tuple[FortuneRecord, ...], corporate: tuple[FortuneRecord, ...], oracle: tuple[FortuneRecord, ...], numbers: tuple[int, ...]
 ) -> Catalogue:
     """Reject duplicate IDs and fortune text across an already parsed catalogue."""
     seen_ids: set[str] = set()
@@ -187,36 +170,16 @@ def assemble_catalogue(
             raise DatasetError(f"{record.id}: duplicate fortune text")
         seen_ids.add(record.id)
         seen_text.add(folded)
-    return Catalogue(
-        ordinary=ordinary,
-        dark=dark,
-        corporate=corporate,
-        oracle=oracle,
-        numbers=numbers,
-    )
+    return Catalogue(ordinary=ordinary, dark=dark, corporate=corporate, oracle=oracle, numbers=numbers)
 
 
 def _load_bundled() -> Catalogue:
     ordinary = parse_ordinary(parse_json(_read("fortunes.json"), resource="fortunes.json"))
-    dark = parse_simple(
-        parse_json(_read("dark.json"), resource="dark.json"),
-        resource="dark.json",
-        mode="dark",
-    )
-    corporate = parse_simple(
-        parse_json(_read("corporate.json"), resource="corporate.json"),
-        resource="corporate.json",
-        mode="corporate",
-    )
+    dark = parse_simple(parse_json(_read("dark.json"), resource="dark.json"), resource="dark.json", mode="dark")
+    corporate = parse_simple(parse_json(_read("corporate.json"), resource="corporate.json"), resource="corporate.json", mode="corporate")
     oracle = parse_oracle(parse_json(_read("oracle.json"), resource="oracle.json"))
     numbers = parse_numbers(parse_json(_read("lucky_numbers.json"), resource="lucky_numbers.json"))
-    return assemble_catalogue(
-        ordinary=ordinary,
-        dark=dark,
-        corporate=corporate,
-        oracle=oracle,
-        numbers=numbers,
-    )
+    return assemble_catalogue(ordinary=ordinary, dark=dark, corporate=corporate, oracle=oracle, numbers=numbers)
 
 
 def _read(name: str) -> str:
@@ -240,13 +203,7 @@ def _fortune_list(payload: object, *, resource: str, allowed: tuple[str, ...]) -
 
 def _ordinary_record(item: object, *, resource: str, index: int) -> FortuneRecord:
     body = _record_object(item, resource=resource, index=index)
-    _exact_keys(
-        body,
-        required=("id", "category", "text"),
-        allowed=("id", "category", "text"),
-        resource=resource,
-        index=index,
-    )
+    _exact_keys(body, required=("id", "category", "text"), allowed=("id", "category", "text"), resource=resource, index=index)
     category = body["category"]
     record_id = _identifier(body["id"], resource=resource, index=index, prefix=None)
     if not isinstance(category, str) or category not in CATEGORIES:
@@ -254,12 +211,7 @@ def _ordinary_record(item: object, *, resource: str, index: int) -> FortuneRecor
     if not record_id.startswith(f"{category}-"):
         _field_error(resource, index, record_id, "id", "must begin with the category name")
     text = _entry_text(body["text"], resource=resource, index=index, record_id=record_id, field="text")
-    return FortuneRecord(
-        id=record_id,
-        text=text,
-        mode="standard",
-        category=cast(Category, category),
-    )
+    return FortuneRecord(id=record_id, text=text, mode="standard", category=cast(Category, category))
 
 
 def _simple_record(item: object, *, resource: str, index: int, mode: Mode) -> FortuneRecord:
@@ -272,33 +224,14 @@ def _simple_record(item: object, *, resource: str, index: int, mode: Mode) -> Fo
 
 def _oracle_record(item: object, *, resource: str, index: int) -> FortuneRecord:
     body = _record_object(item, resource=resource, index=index)
-    _exact_keys(
-        body,
-        required=("id", "text", "risk_level", "recommended_action"),
-        allowed=("id", "text", "risk_level", "recommended_action"),
-        resource=resource,
-        index=index,
-    )
+    _exact_keys(body, required=("id", "text", "risk_level", "recommended_action"), allowed=("id", "text", "risk_level", "recommended_action"), resource=resource, index=index)
     record_id = _identifier(body["id"], resource=resource, index=index, prefix="oracle")
     text = _entry_text(body["text"], resource=resource, index=index, record_id=record_id, field="text")
     risk = body["risk_level"]
     if not isinstance(risk, str) or risk not in RISK_LEVELS:
         _field_error(resource, index, record_id, "risk_level", "is not a known risk level")
-    action = _entry_text(
-        body["recommended_action"],
-        resource=resource,
-        index=index,
-        record_id=record_id,
-        field="recommended_action",
-    )
-    return FortuneRecord(
-        id=record_id,
-        text=text,
-        mode="oracle",
-        category=None,
-        risk_level=cast(RiskLevel, risk),
-        recommended_action=action,
-    )
+    action = _entry_text(body["recommended_action"], resource=resource, index=index, record_id=record_id, field="recommended_action")
+    return FortuneRecord(id=record_id, text=text, mode="oracle", category=None, risk_level=cast(RiskLevel, risk), recommended_action=action)
 
 
 def _object(payload: object, *, resource: str) -> dict[str, object]:

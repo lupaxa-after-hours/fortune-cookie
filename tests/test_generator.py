@@ -6,14 +6,7 @@ import random
 
 import pytest
 
-from lupaxa.fortune import (
-    EmptyFortunePoolError,
-    FortuneGenerator,
-    InvalidOptionError,
-    UnknownCategoryError,
-    generate_fortune,
-    generate_fortunes,
-)
+from lupaxa.fortune import EmptyFortunePoolError, FortuneGenerator, InvalidOptionError, UnknownCategoryError, generate_fortune, generate_fortunes
 from lupaxa.fortune.catalogue import Catalogue, FortuneRecord
 from lupaxa.fortune.models import CATEGORIES
 
@@ -38,37 +31,13 @@ class Spy:
 
 
 def _catalogue() -> Catalogue:
-    ordinary = tuple(
-        FortuneRecord(
-            id=f"{category}-001",
-            text=f"Standard fortune for {category}.",
-            mode="standard",
-            category=category,
-        )
-        for category in CATEGORIES
-    )
-    ordinary = (
-        *ordinary,
-        FortuneRecord(
-            id="wisdom-002",
-            text="A second wisdom fortune.",
-            mode="standard",
-            category="wisdom",
-        ),
-    )
+    ordinary = tuple(FortuneRecord(id=f"{category}-001", text=f"Standard fortune for {category}.", mode="standard", category=category) for category in CATEGORIES)
+    ordinary = (*ordinary, FortuneRecord(id="wisdom-002", text="A second wisdom fortune.", mode="standard", category="wisdom"))
     return Catalogue(
         ordinary=ordinary,
         dark=(FortuneRecord(id="dark-001", text="A bleak fortune.", mode="dark"),),
         corporate=(FortuneRecord(id="corporate-001", text="Please align.", mode="corporate"),),
-        oracle=(
-            FortuneRecord(
-                id="oracle-001",
-                text="The omens are mixed.",
-                mode="oracle",
-                risk_level="high",
-                recommended_action="Review the rollback plan.",
-            ),
-        ),
+        oracle=(FortuneRecord(id="oracle-001", text="The omens are mixed.", mode="oracle", risk_level="high", recommended_action="Review the rollback plan."),),
         numbers=(8, 16, 32, 64, 128),
     )
 
@@ -115,10 +84,7 @@ def test_disabled_numbers_do_not_sample() -> None:
 
 def test_large_number_count_is_ignored_when_numbers_are_off() -> None:
     """Pool size is checked only when numbers are enabled."""
-    fortune = FortuneGenerator(catalogue=_catalogue()).generate(
-        include_numbers=False,
-        number_count=100,
-    )
+    fortune = FortuneGenerator(catalogue=_catalogue()).generate(include_numbers=False, number_count=100)
     assert fortune.lucky_numbers == ()
 
 
@@ -134,13 +100,7 @@ def test_oracle_metadata_comes_from_the_record() -> None:
 def test_many_allows_duplicates_in_order() -> None:
     """A one-record pool can repeat, in call order."""
     catalogue = _catalogue()
-    only_dark = Catalogue(
-        ordinary=catalogue.ordinary,
-        dark=catalogue.dark,
-        corporate=catalogue.corporate,
-        oracle=catalogue.oracle,
-        numbers=catalogue.numbers,
-    )
+    only_dark = Catalogue(ordinary=catalogue.ordinary, dark=catalogue.dark, corporate=catalogue.corporate, oracle=catalogue.oracle, numbers=catalogue.numbers)
     results = FortuneGenerator(rng=random.Random(1), catalogue=only_dark).generate_many(3, mode="dark")
     assert [item.id for item in results] == ["dark-001", "dark-001", "dark-001"]
 
@@ -166,13 +126,7 @@ def test_global_random_is_unchanged() -> None:
 def test_empty_pool() -> None:
     """An empty selected pool is reported before a draw."""
     catalogue = _catalogue()
-    empty = Catalogue(
-        ordinary=catalogue.ordinary,
-        dark=(),
-        corporate=catalogue.corporate,
-        oracle=catalogue.oracle,
-        numbers=catalogue.numbers,
-    )
+    empty = Catalogue(ordinary=catalogue.ordinary, dark=(), corporate=catalogue.corporate, oracle=catalogue.oracle, numbers=catalogue.numbers)
     with pytest.raises(EmptyFortunePoolError):
         FortuneGenerator(catalogue=empty).generate(mode="dark")
 

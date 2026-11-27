@@ -5,11 +5,7 @@ from __future__ import annotations
 import random
 from typing import TYPE_CHECKING
 
-from lupaxa.fortune.exceptions import (
-    EmptyFortunePoolError,
-    InvalidOptionError,
-    UnknownCategoryError,
-)
+from lupaxa.fortune.exceptions import EmptyFortunePoolError, InvalidOptionError, UnknownCategoryError
 from lupaxa.fortune.models import CATEGORIES, MODES, Category, Fortune, Mode
 
 if TYPE_CHECKING:
@@ -35,40 +31,18 @@ class FortuneGenerator:
 
     def generate(self, *, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4) -> Fortune:
         """Return one fortune."""
-        self._validate(
-            category=category,
-            mode=mode,
-            include_numbers=include_numbers,
-            number_count=number_count,
-        )
+        self._validate(category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)
         catalogue = self._catalogue()
-        pool = self._prepare_pool(
-            catalogue,
-            category=category,
-            mode=mode,
-            include_numbers=include_numbers,
-            number_count=number_count,
-        )
+        pool = self._prepare_pool(catalogue, category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)
         return self._draw(catalogue, pool, include_numbers=include_numbers, number_count=number_count)
 
     def generate_many(self, count: int = 1, *, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4) -> tuple[Fortune, ...]:
         """Return ``count`` fortunes from one validation and one RNG stream."""
         if isinstance(count, bool) or not isinstance(count, int) or count < 1:
             raise InvalidOptionError("count must be a positive integer")
-        self._validate(
-            category=category,
-            mode=mode,
-            include_numbers=include_numbers,
-            number_count=number_count,
-        )
+        self._validate(category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)
         catalogue = self._catalogue()
-        pool = self._prepare_pool(
-            catalogue,
-            category=category,
-            mode=mode,
-            include_numbers=include_numbers,
-            number_count=number_count,
-        )
+        pool = self._prepare_pool(catalogue, category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)
         return tuple(self._draw(catalogue, pool, include_numbers=include_numbers, number_count=number_count) for _ in range(count))
 
     def _catalogue(self) -> Catalogue:
@@ -107,41 +81,16 @@ class FortuneGenerator:
         if include_numbers:
             picked = self._rng.sample(catalogue.numbers, number_count)
             numbers = tuple(sorted(picked))
-        return Fortune(
-            id=record.id,
-            text=record.text,
-            mode=record.mode,
-            category=record.category,
-            risk_level=record.risk_level,
-            recommended_action=record.recommended_action,
-            lucky_numbers=numbers,
-        )
+        return Fortune(id=record.id, text=record.text, mode=record.mode, category=record.category, risk_level=record.risk_level, recommended_action=record.recommended_action, lucky_numbers=numbers)
 
 
 def generate_fortune(*, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4, rng: random.Random | None = None) -> Fortune:
     """Return one fortune, reusing ``rng`` when the caller supplied one."""
-    return FortuneGenerator(rng=rng).generate(
-        category=category,
-        mode=mode,
-        include_numbers=include_numbers,
-        number_count=number_count,
-    )
+    return FortuneGenerator(rng=rng).generate(category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)
 
 
 def generate_fortunes(
-    count: int = 1,
-    *,
-    category: Category | None = None,
-    mode: Mode = "standard",
-    include_numbers: bool = True,
-    number_count: int = 4,
-    rng: random.Random | None = None,
+    count: int = 1, *, category: Category | None = None, mode: Mode = "standard", include_numbers: bool = True, number_count: int = 4, rng: random.Random | None = None
 ) -> tuple[Fortune, ...]:
     """Return several fortunes from one generator and the supplied RNG."""
-    return FortuneGenerator(rng=rng).generate_many(
-        count,
-        category=category,
-        mode=mode,
-        include_numbers=include_numbers,
-        number_count=number_count,
-    )
+    return FortuneGenerator(rng=rng).generate_many(count, category=category, mode=mode, include_numbers=include_numbers, number_count=number_count)

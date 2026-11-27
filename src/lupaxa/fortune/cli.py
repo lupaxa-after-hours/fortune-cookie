@@ -17,71 +17,20 @@ from lupaxa.fortune.version import get_version
 
 def build_parser() -> argparse.ArgumentParser:
     """Return the fortune-cookie argument parser."""
-    parser = argparse.ArgumentParser(
-        prog="fortune-cookie",
-        description="Draw a developer fortune cookie.",
-    )
-    parser.add_argument(
-        "--version",
-        action="version",
-        version=f"lupaxa-fortune {get_version()}",
-    )
-    parser.add_argument(
-        "--categories",
-        action="store_true",
-        help="List ordinary categories and exit.",
-    )
-    parser.add_argument(
-        "--category",
-        choices=CATEGORIES,
-        default=argparse.SUPPRESS,
-        help="Limit a standard fortune to one ordinary category.",
-    )
-    parser.add_argument(
-        "--count",
-        type=_positive_int,
-        default=argparse.SUPPRESS,
-        help="How many fortunes to print. The default is 1.",
-    )
+    parser = argparse.ArgumentParser(prog="fortune-cookie", description="Draw a developer fortune cookie.")
+    parser.add_argument("--version", action="version", version=f"lupaxa-fortune {get_version()}")
+    parser.add_argument("--categories", action="store_true", help="List ordinary categories and exit.")
+    parser.add_argument("--category", choices=CATEGORIES, default=argparse.SUPPRESS, help="Limit a standard fortune to one ordinary category.")
+    parser.add_argument("--count", type=_positive_int, default=argparse.SUPPRESS, help="How many fortunes to print. The default is 1.")
     numbers = parser.add_mutually_exclusive_group()
-    numbers.add_argument(
-        "--numbers",
-        action="store_true",
-        default=argparse.SUPPRESS,
-        help="Show lucky numbers. This is the default.",
-    )
-    numbers.add_argument(
-        "--no-numbers",
-        action="store_true",
-        default=argparse.SUPPRESS,
-        help="Hide lucky numbers.",
-    )
+    numbers.add_argument("--numbers", action="store_true", default=argparse.SUPPRESS, help="Show lucky numbers. This is the default.")
+    numbers.add_argument("--no-numbers", action="store_true", default=argparse.SUPPRESS, help="Hide lucky numbers.")
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--dark", action="store_true", default=argparse.SUPPRESS, help="Dark mode.")
-    modes.add_argument(
-        "--corporate",
-        action="store_true",
-        default=argparse.SUPPRESS,
-        help="Corporate mode.",
-    )
-    modes.add_argument(
-        "--oracle",
-        action="store_true",
-        default=argparse.SUPPRESS,
-        help="Oracle mode.",
-    )
-    parser.add_argument(
-        "--plain",
-        action="store_true",
-        default=argparse.SUPPRESS,
-        help="Plain text without decorations.",
-    )
-    parser.add_argument(
-        "--seed",
-        type=int,
-        default=argparse.SUPPRESS,
-        help="Integer seed for a repeatable result.",
-    )
+    modes.add_argument("--corporate", action="store_true", default=argparse.SUPPRESS, help="Corporate mode.")
+    modes.add_argument("--oracle", action="store_true", default=argparse.SUPPRESS, help="Oracle mode.")
+    parser.add_argument("--plain", action="store_true", default=argparse.SUPPRESS, help="Plain text without decorations.")
+    parser.add_argument("--seed", type=int, default=argparse.SUPPRESS, help="Integer seed for a repeatable result.")
     return parser
 
 
@@ -119,11 +68,7 @@ def _run(argv: Sequence[str] | None) -> int:
     try:
         first = True
         for _ in range(count):
-            fortune = generator.generate(
-                category=category,
-                mode=mode,
-                include_numbers=include_numbers,
-            )
+            fortune = generator.generate(category=category, mode=mode, include_numbers=include_numbers)
             if not first:
                 sys.stdout.write("\n")
             first = False

@@ -9,13 +9,7 @@ from lupaxa.fortune.render import render_fortune
 
 
 def _standard() -> Fortune:
-    return Fortune(
-        id="wisdom-001",
-        text="The code you are afraid to touch will soon require modification.",
-        mode="standard",
-        category="wisdom",
-        lucky_numbers=(22, 80, 443, 8080),
-    )
+    return Fortune(id="wisdom-001", text="The code you are afraid to touch will soon require modification.", mode="standard", category="wisdom", lucky_numbers=(22, 80, 443, 8080))
 
 
 def _oracle() -> Fortune:
@@ -37,12 +31,7 @@ def test_decorative_standard() -> None:
 def test_decorative_modes() -> None:
     """Dark and corporate headings stay specific."""
     dark = Fortune(id="dark-001", text="Bleak, but playful.", mode="dark", lucky_numbers=(8, 16))
-    corporate = Fortune(
-        id="corporate-001",
-        text="Please align the alignment.",
-        mode="corporate",
-        lucky_numbers=(404,),
-    )
+    corporate = Fortune(id="corporate-001", text="Please align the alignment.", mode="corporate", lucky_numbers=(404,))
     assert render_fortune(dark).startswith("🌑 Your dark fortune:")
     assert render_fortune(corporate).startswith("💼 Your corporate fortune:")
 
@@ -70,21 +59,10 @@ def test_plain_oracle() -> None:
 
 def test_omits_empty_numbers() -> None:
     """An empty number tuple drops the lucky line and its blank line."""
-    fortune = Fortune(
-        id="wisdom-001",
-        text="A short fortune.",
-        mode="standard",
-        category="wisdom",
-    )
+    fortune = Fortune(id="wisdom-001", text="A short fortune.", mode="standard", category="wisdom")
     assert render_fortune(fortune) == "🥠 Your fortune:\n\nA short fortune."
     assert render_fortune(fortune, plain=True) == "A short fortune."
-    oracle = Fortune(
-        id="oracle-001",
-        text="A calm omen.",
-        mode="oracle",
-        risk_level="low",
-        recommended_action="Commit your work and enjoy the quiet.",
-    )
+    oracle = Fortune(id="oracle-001", text="A calm omen.", mode="oracle", risk_level="low", recommended_action="Commit your work and enjoy the quiet.")
     rendered = render_fortune(oracle, plain=True)
     assert "Lucky numbers" not in rendered
     assert "Risk level: low" in rendered

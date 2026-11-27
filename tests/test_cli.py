@@ -207,13 +207,7 @@ def test_broken_pipe_subprocess(tmp_path: Path) -> None:
     """A consumer that closes stdout early does not see a traceback."""
     env = os.environ.copy()
     env["PYTHONPATH"] = str(SRC)
-    proc = subprocess.Popen(
-        [sys.executable, "-m", "lupaxa.fortune", "--count", "30", "--seed", "1"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=tmp_path,
-        env=env,
-    )
+    proc = subprocess.Popen([sys.executable, "-m", "lupaxa.fortune", "--count", "30", "--seed", "1"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=tmp_path, env=env)
     assert proc.stdout is not None
     proc.stdout.close()
     code = proc.wait(timeout=20)
@@ -237,22 +231,8 @@ def test_module_entry_agrees(tmp_path: Path) -> None:
     """``python -m lupaxa.fortune`` matches the library entry for one seed."""
     env = os.environ.copy()
     env["PYTHONPATH"] = str(SRC)
-    first = subprocess.run(
-        [sys.executable, "-m", "lupaxa.fortune", "--seed", "9", "--plain", "--no-numbers"],
-        cwd=tmp_path,
-        env=env,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    second = subprocess.run(
-        [sys.executable, "-m", "lupaxa.fortune", "--seed", "9", "--plain", "--no-numbers"],
-        cwd=tmp_path,
-        env=env,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    first = subprocess.run([sys.executable, "-m", "lupaxa.fortune", "--seed", "9", "--plain", "--no-numbers"], cwd=tmp_path, env=env, capture_output=True, text=True, check=False)
+    second = subprocess.run([sys.executable, "-m", "lupaxa.fortune", "--seed", "9", "--plain", "--no-numbers"], cwd=tmp_path, env=env, capture_output=True, text=True, check=False)
     assert first.returncode == 0
     assert first.stdout == second.stdout
     assert main(["--seed", "9", "--plain", "--no-numbers"]) == 0

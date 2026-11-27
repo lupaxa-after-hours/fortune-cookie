@@ -6,13 +6,7 @@ and validates them on first use.
 
 from __future__ import annotations
 
-from .exceptions import (
-    DatasetError,
-    EmptyFortunePoolError,
-    FortuneError,
-    InvalidOptionError,
-    UnknownCategoryError,
-)
+from .exceptions import DatasetError, EmptyFortunePoolError, FortuneError, InvalidOptionError, UnknownCategoryError
 from .generator import FortuneGenerator, generate_fortune, generate_fortunes
 from .models import Category, Fortune, Mode, RiskLevel, list_categories
 from .version import __version__, get_version

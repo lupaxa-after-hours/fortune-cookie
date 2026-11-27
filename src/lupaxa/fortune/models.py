@@ -20,17 +20,7 @@ Category = Literal[
 Mode = Literal["standard", "dark", "corporate", "oracle"]
 RiskLevel = Literal["low", "moderate", "high", "critical"]
 
-CATEGORIES: tuple[Category, ...] = (
-    "wisdom",
-    "warning",
-    "prediction",
-    "ominous",
-    "encouragement",
-    "devops",
-    "code",
-    "career",
-    "friday",
-)
+CATEGORIES: tuple[Category, ...] = ("wisdom", "warning", "prediction", "ominous", "encouragement", "devops", "code", "career", "friday")
 MODES: tuple[Mode, ...] = ("standard", "dark", "corporate", "oracle")
 RISK_LEVELS: tuple[RiskLevel, ...] = ("low", "moderate", "high", "critical")
 
